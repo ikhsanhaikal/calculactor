@@ -3,11 +3,13 @@ const numbers = document.querySelectorAll('.numbers');
 const operators = document.querySelectorAll('.operators');
 let order = [], lval;
 let isReady = false;
+let isError = false;
 let hit = false;
 
 /* display */
 numbers.forEach(function(number){
     number.addEventListener('click', ()=>{
+        if (isError) {display.textContent = number.textContent; isError = false; order = []; return;}
         if (isReady) {display.textContent = number.textContent; isReady = false; return;}
         if (display.textContent === '0') {display.textContent = number.textContent; return;}
         display.textContent += number.textContent;
@@ -96,6 +98,11 @@ function operate(operator, lval, rval) {
             order[0] = display.textContent;
             break;
         case '/':
+            if(rval === 0) {
+                display.textContent = 'Error'; 
+                isError = true;
+                break;
+            }
             result = divide(lval, rval);
             order.shift();
             order.shift();

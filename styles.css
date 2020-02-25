@@ -1,15 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 .display {
-    background-color: darkgray;
+    background-color: rgba(45, 187, 88, 0.733);
     height: 60px;
     font-size: 60px;
     display: flex;
     align-items: center;
     justify-content: flex-end;
     font-family: 'ZCOOL QingKe HuangYou';
+    border: 3px solid black;
+    border-radius: 10px;
+    box-shadow: 2px 3px 1px black;
+    margin-bottom: 10px;
 }
 
 .calculator {
     border: 1px solid red;
-    width: 600px;
+    width: 450px;
     margin: 100px auto;
+    border-radius: 5px;
+
+}
+
+button {
+    width: 100px;
+    height: 40px;
+    background-color: rgb(49, 47, 47);
+    color: white;
+    font-size: 30px;
+    border-radius: 10px;
+    outline: none;
+    margin-bottom: 5px;
+    box-shadow: 2px 2px 2px black;
+}
+
+button:active {
+    box-shadow: none;
+    font-size: 28px;
 }
