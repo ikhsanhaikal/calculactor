@@ -1,6 +1,7 @@
 const display = document.querySelector('.display');
 const numbers = document.querySelectorAll('.numbers');
 const operators = document.querySelectorAll('.operators');
+const clear   = document.querySelector('.clear');
 let order = [], lval;
 let isReady = false;
 let isError = false;
@@ -9,7 +10,7 @@ let hit = false;
 /* display */
 numbers.forEach(function(number){
     number.addEventListener('click', ()=>{
-        if (isError) {display.textContent = number.textContent; isError = false; order = []; return;}
+        if (isError) {display.textContent = number.textContent; isError = false; order = [];    return;}
         if (isReady) {display.textContent = number.textContent; isReady = false; return;}
         if (display.textContent === '0') {display.textContent = number.textContent; return;}
         display.textContent += number.textContent;
@@ -39,8 +40,8 @@ operators.forEach(function(operator) {
                 operate(order[1], parseInt(order[0]), parseInt(order[2])); 
             }
         }
-        if(operator.textContent === '*') {
-            console.log('*');
+        if(operator.textContent === '×') {
+            console.log('×');
             isReady = true;
             order.push(display.textContent);
             order.push(operator.textContent);
@@ -49,8 +50,8 @@ operators.forEach(function(operator) {
                 operate(order[1], parseInt(order[0]), parseInt(order[2])); 
             }
         }
-        if(operator.textContent === '/') {
-            console.log('/');
+        if(operator.textContent === '÷') {
+            console.log('÷');
             isReady = true;
             order.push(display.textContent);
             order.push(operator.textContent);
@@ -68,7 +69,10 @@ operators.forEach(function(operator) {
     })
 })
 
-
+clear.addEventListener('click', function() {
+    order = [];
+    display.textContent = 0;
+})
 
 
 /*--------------------------------------------------*/
@@ -90,14 +94,14 @@ function operate(operator, lval, rval) {
             display.textContent = result;
             order[0] = display.textContent;
             break;
-        case '*':
+        case '×':
             result = multiply(lval, rval);
             order.shift();
             order.shift();
             display.textContent = result;
             order[0] = display.textContent;
             break;
-        case '/':
+        case '÷':
             if(rval === 0) {
                 display.textContent = 'Error'; 
                 isError = true;
