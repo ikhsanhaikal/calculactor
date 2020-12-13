@@ -50,7 +50,7 @@ body { background-color: rgb(255, 234, 250);}
 div.numbers, div.operators, div.clear {
     width: 60px;
     height: 40px;
-    background-color: rgb(148, 148, 148);
+    /* background-color: rgb(148, 148, 148); */
     color: white;
     font-size: 30px;
     border-radius: 5px;
@@ -73,14 +73,12 @@ div.numbers:active, div.operators:active {
     color: white;
 }
 
-
 div.clear { 
-    /* padding-top: 5px;  */
     padding-bottom: 5px;
-    /* font-weight: 900; */
     font-size: 40px;
     color: rgb(224, 224, 224);
     background-color: rgb(211, 50, 50);
+
 }
 
 div.clear:hover {
@@ -95,7 +93,7 @@ div.clear:active {
 
 div.zero { 
     width: 135px;
-    background-color: rgb(148, 148, 148);
+    /* background-color: rgb(148, 148, 148); */
 }
 div.operators {
     padding-bottom: 5px;
