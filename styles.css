@@ -75,8 +75,10 @@ div.numbers:active, div.operators:active {
 
 
 div.clear { 
-    padding-top: 5px; 
-    font-weight: 700;
+    /* padding-top: 5px;  */
+    padding-bottom: 5px;
+    /* font-weight: 900; */
+    font-size: 40px;
     color: rgb(224, 224, 224);
     background-color: rgb(211, 50, 50);
 }
