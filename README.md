@@ -2,4 +2,4 @@
 
 ### mini project (DOM & javascript)
 
-##### live preview https://ikhsanhaikal.github.io/calculator/
+##### live preview https://ikhsanhaikal.github.io/calculactor/
